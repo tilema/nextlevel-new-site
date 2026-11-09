@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/*
+ * Палитра Next Level (на основе логотипа):
+ *  - ink      #1f2147  тёмно-синий из логотипа (текст, футер)
+ *  - blue     #2540e0  основной акцент (кнопки, ссылки)
+ *  - coral    #ff6b47  тёплый акцент (метки, детали)
+ *  - mint     #0f9d6b  успех / галочки
+ * Шкала slate инвертирована под светлую тему.
+ */
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Noto Sans Armenian', system-ui, -apple-system, sans-serif;
+
+  --color-white: #1f2147;
+
+  --color-slate-950: #f4f6ff;
+  --color-slate-900: #ffffff;
+  --color-slate-800: #e6eaf8;
+  --color-slate-700: #d3d9ee;
+  --color-slate-600: #a9b1cf;
+  --color-slate-500: #7b84a8;
+  --color-slate-400: #566083;
+  --color-slate-300: #3d4568;
+  --color-slate-200: #2a3052;
+  --color-slate-100: #1f2147;
+
+  --color-indigo-300: #3f5bea;
+  --color-indigo-400: #3350e6;
+  --color-indigo-500: #2f4bf0;
+  --color-indigo-600: #2540e0;
+  --color-indigo-700: #1c32b8;
+  --color-indigo-900: #dfe5ff;
+  --color-indigo-950: #eaeeff;
+
+  --color-cyan-300: #ff9a7d;
+  --color-cyan-400: #ee5a35;
+  --color-cyan-500: #ff6b47;
+  --color-cyan-600: #e5502b;
+
+  --color-emerald-300: #0b8a5c;
+  --color-emerald-400: #0f9d6b;
+  --color-emerald-500: #10b27a;
+
+  --color-sky-300: #2563eb;
+  --color-sky-400: #2563eb;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: #ffffff;
+    color: #1f2147;
+    font-family: var(--font-sans);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-floaty {
+  animation: floaty 5s ease-in-out infinite;
+}
